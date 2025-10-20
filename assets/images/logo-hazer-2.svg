@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square badge with subtle inner shine -->
+  <rect x="12" y="12" width="104" height="104" rx="24" fill="url(#g2)"/>
+  <rect x="18" y="18" width="92" height="92" rx="20" fill="#ffffff" opacity="0.06"/>
+  <!-- H monogram (angular) -->
+  <rect x="36" y="32" width="16" height="64" rx="3" fill="#ffffff"/>
+  <rect x="76" y="32" width="16" height="64" rx="3" fill="#ffffff"/>
+  <path d="M52 60h24c3.314 0 6 2.686 6 6s-2.686 6-6 6H52c-3.314 0-6-2.686-6-6s2.686-6 6-6z" fill="#ffffff"/>
+</svg>
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Hazer Yapı Kimyasalları</title>
+    <meta name="description"
+        content="Hazer Yapı Kimyasalları hakkında: misyonumuz, vizyonumuz, değerlerimiz ve uzman ekibimiz.">
+    <link rel="canonical" href="./hakkimizda.html">
+    <link rel="alternate" href="./hakkimizda.html?lang=tr" hreflang="tr">
+    <link rel="alternate" href="./hakkimizda.html?lang=en" hreflang="en">
+    <link rel="alternate" href="./hakkimizda.html" hreflang="x-default">
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem","position": 1, "name": "Anasayfa", "item": "/index.html"},
+        {"@type": "ListItem","position": 2, "name": "Hakkımızda", "item": "/hakkimizda.html"}
+      ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen bg-white">
+    <!-- Navigation -->
+    <nav id="navigation"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="./assets/images/logo-hazer-1.svg" alt="Hazer Yapı Kimyasalları Logo" class="h-12 w-12">
+                    <div>
+                        <div id="company-name" class="text-xl font-bold text-gray-900">Hazer Yapı Kimyasalları</div>
+                        <div id="company-tagline" class="text-sm text-blue-600">Yapı Sektörünün Geleceğini
+                            Yapıştırıyoruz.</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <ul id="nav-links" class="flex space-x-8">
+                        <!-- Navigation links will be populated by JavaScript -->
+                    </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+                        <button id="lang-tr"
+                            class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 bg-blue-600 text-white">TR</button>
+                        <button id="lang-en"
+                            class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">EN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden pb-4">
+                <ul id="mobile-nav-links" class="space-y-2">
+                    <!-- Mobile navigation links will be populated by JavaScript -->
+                </ul>
+                <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1 mt-4 w-fit">
+                    <button id="mobile-lang-tr"
+                        class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 bg-blue-600 text-white">TR</button>
+                    <button id="mobile-lang-en"
+                        class="px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20 pb-20">
+        <!-- Hero / Header -->
+        <section class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 py-16 overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-white">
+                        <div
+                            class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+                            <span id="about-company-chip" class="text-blue-100 text-sm font-medium">Hazer Yapı
+                                Kimyasalları</span>
+                        </div>
+                        <h1 id="about-hero-title" class="text-4xl lg:text-5xl font-bold leading-tight mb-4">Hakkımızda
+                        </h1>
+                        <p id="about-hero-subtitle" class="text-blue-200 text-lg leading-relaxed mb-6">İnovatif
+                            yapıştırıcı çözümleriyle yapı sektörünün geleceğini inşa ediyoruz</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#values" id="cta-values-btn"
+                                class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-300">Değerlerimiz</a>
+                            <a href="iletisim.html" id="cta-contact-btn"
+                                class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300">İletişim</a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -top-6 -right-6 w-28 h-28 bg-blue-500/20 rounded-full blur-2xl"></div>
+                        <div class="absolute -bottom-8 -left-8 w-36 h-36 bg-purple-500/20 rounded-full blur-2xl"></div>
+                        <img src="./assets/images/office/office-interior.webp" alt="Hazer Ofis"
+                            class="relative z-10 w-full h-auto rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission / Vision / Expertise -->
+        <section class="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-4">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-5">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 id="mission-title" class="text-2xl font-bold text-gray-900 mb-3">Misyonumuz</h3>
+                        <p id="mission-text" class="text-gray-600 leading-relaxed">Yapı sektörüne en kaliteli, en
+                            güvenilir ve çevre dostu yapıştırıcı çözümlerini sunmak. İnovatif ürünler ve mükemmel hizmet
+                            ile müşterilerimizin beklentilerini aşmayı hedefliyoruz.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-slate-600 to-slate-800 rounded-xl flex items-center justify-center mb-5">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <h3 id="story-title" class="text-2xl font-bold text-gray-900 mb-3">Hikayemiz</h3>
+                        <p id="story-text" class="text-gray-600 leading-relaxed">Hazer Yapı Kimyasalları, yapı sektörüne
+                            yüksek performanslı ve çevre dostu yapıştırıcı çözümleri sunma vizyonuyla kuruldu. Yılların
+                            deneyimi ve sürekli inovasyon ile inşaat profesyonellerinin güvenilir ortağı olduk.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div
+                            class="w-14 h-14 bg-gradient-to-br from-amber-600 to-amber-800 rounded-xl flex items-center justify-center mb-5">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h3 id="vision-title" class="text-2xl font-bold text-gray-900 mb-3">Vizyonumuz</h3>
+                        <p id="vision-text" class="text-gray-600 leading-relaxed">Yapı sektöründe lider yapıştırıcı
+                            çözümleri sağlayıcısı olmak, inovasyon, kalite ve sürdürülebilirlik ile küresel olarak
+                            tanınmak. Son teknoloji ürünlerimizle inşaatın geleceğini şekillendirmeye çalışıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section id="values" class="bg-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 id="values-title" class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Değerlerimiz</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-800 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl border border-blue-100">
+                        <h3 id="value-innovation-title" class="text-xl font-bold text-gray-900 mb-2">İnovasyon</h3>
+                        <p id="value-innovation-text" class="text-gray-600">Son teknoloji çözümler geliştirmek için
+                            sürekli Ar-Ge'ye yatırım yapıyoruz.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-white to-green-50 p-8 rounded-2xl border border-green-100">
+                        <h3 id="value-quality-title" class="text-xl font-bold text-gray-900 mb-2">Kalite</h3>
+                        <p id="value-quality-text" class="text-gray-600">Kaliteden asla ödün vermeyiz. Her ürün titiz
+                            testlerden geçer.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-white to-purple-50 p-8 rounded-2xl border border-purple-100">
+                        <h3 id="value-trust-title" class="text-xl font-bold text-gray-900 mb-2">Güven</h3>
+                        <p id="value-trust-text" class="text-gray-600">Güvenilirlik ve şeffaflığa dayalı uzun vadeli
+                            ilişkiler kuruyoruz.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-white to-amber-50 p-8 rounded-2xl border border-amber-100">
+                        <h3 id="value-sustainability-title" class="text-xl font-bold text-gray-900 mb-2">
+                            Sürdürülebilirlik</h3>
+                        <p id="value-sustainability-text" class="text-gray-600">Gelecek nesiller için gezegenimizi
+                            koruyan çevre dostu ürünler.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline / History -->
+        <section class="bg-gradient-to-r from-blue-900 via-slate-900 to-blue-900 py-16">
+            <div class="container mx-auto px-6 text-white">
+                <div class="text-center mb-12">
+                    <h2 id="history-title" class="text-3xl lg:text-4xl font-bold mb-3">Yolculuğumuz</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 rounded-2xl p-8 border border-white/20">
+                        <div class="text-4xl font-extrabold text-blue-300 mb-2">2015</div>
+                        <p id="history-1994" class="text-blue-100">Kuruluş ve ilk ürün gamının pazara sunulması.</p>
+                    </div>
+                    <div> </div>
+                    <div class="bg-white/10 rounded-2xl p-8 border border-white/20">
+                        <div class="text-4xl font-extrabold text-blue-300 mb-2">2024</div>
+                        <p id="history-2024" class="text-blue-100">15+ ülkeye ihracat ve genişletilmiş ürün ailesi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h3 id="cta-title" class="text-3xl font-bold text-gray-900 mb-4">Birlikte Çalışmaya Hazır mısınız?</h3>
+                <p id="cta-subtitle" class="text-gray-600 mb-8 max-w-3xl mx-auto">Ürünlerimiz ve hizmetlerimiz hakkında
+                    daha fazla bilgi almak için bizimle iletişime geçin</p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="iletisim.html" id="cta-button"
+                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-lg transition-all duration-300">İletişime
+                        Geçin</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-br from-slate-900 to-black text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p id="footer-copyright" class="text-gray-400">© 2024 Hazer Yapı Kimyasalları. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+    <script src="./assets/js/layout.js"></script>
+    <script src="./assets/js/content.js"></script>
+    <script src="./assets/js/hakkimizda.js"></script>
+</body>
+
+</html>

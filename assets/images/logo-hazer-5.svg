@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <!-- Resin drop badge -->
+  <path d="M64 12c22 26 34 43 34 60 0 18.225-15.775 34-34 34S30 90.225 30 72c0-17 12-34 34-60z" fill="url(#g5)"/>
+  <!-- H monogram -->
+  <rect x="44" y="46" width="14" height="48" rx="4" fill="#ffffff"/>
+  <rect x="70" y="46" width="14" height="48" rx="4" fill="#ffffff"/>
+  <rect x="58" y="64" width="12" height="12" rx="3" fill="#ffffff"/>
+</svg>
+
