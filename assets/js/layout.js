@@ -216,7 +216,7 @@
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 					<div class="lg:col-span-2">
 						<div class="flex items-center space-x-3 mb-6">
-                            <img src="${BASE_PATH}/assets/images/logo-hazer-1.svg" alt="Hazer Construction Chemicals Logo" class="h-12 w-12">
+                            <img src="./assets/images/logo-hazer-1.svg" alt="Hazer Construction Chemicals Logo" class="h-12 w-12">
 							<div>
                                 <div id="footer-company-name" class="text-2xl font-bold text-white">Hazer Construction Chemicals</div>
                                 <div id="footer-company-tagline" class="text-sm text-blue-200">Gluing the Future of the Construction Industry.</div>
