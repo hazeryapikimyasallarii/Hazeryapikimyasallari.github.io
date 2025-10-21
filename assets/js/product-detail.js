@@ -12,17 +12,8 @@ class ProductDetailPage {
     }
 
     getInitialLang() {
-        try {
-            const p = new URLSearchParams(window.location.search);
-            const l = p.get('lang');
-            if (l === 'tr' || l === 'en') return l;
-            const stored = localStorage.getItem('lang');
-            if (stored === 'tr' || stored === 'en') return stored;
-            const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-            return browser.startsWith('tr') ? 'tr' : 'en';
-        } catch (_) {
-            return 'en';
-        }
+        // language-utils.js'den getLanguagePreference() kullan
+        return getLanguagePreference();
     }
 
     init() {
@@ -76,12 +67,11 @@ class ProductDetailPage {
         this.renderProductContent();
         this.renderRelatedProducts();
 
-        // HTML lang attribute'unu güncelle
-        document.documentElement.lang = lang;
+        // Dil tercihini cookie'ye kaydet ve HTML lang attribute'unu güncelle
+        updateLanguagePreference(lang);
 
         // Meta description'ı güncelle
         this.updateMetaData(lang);
-        try { localStorage.setItem('lang', lang); } catch (_) { }
     }
 
     updateMetaData(lang) {

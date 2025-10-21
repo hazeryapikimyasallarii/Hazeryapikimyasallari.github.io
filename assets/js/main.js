@@ -7,17 +7,8 @@ class HazerWebsite {
     }
 
     getInitialLang() {
-        try {
-            const params = new URLSearchParams(window.location.search);
-            const urlLang = params.get('lang');
-            if (urlLang === 'tr' || urlLang === 'en') return urlLang;
-            const stored = localStorage.getItem('lang');
-            if (stored === 'tr' || stored === 'en') return stored;
-            const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-            return browser.startsWith('tr') ? 'tr' : 'en';
-        } catch (_) {
-            return 'en';
-        }
+        // language-utils.js'den getLanguagePreference() kullan
+        return getLanguagePreference();
     }
 
     init() {
@@ -49,10 +40,10 @@ class HazerWebsite {
         this.currentLanguage = lang;
         this.updateContent(lang);
         this.updateLanguageButtons(lang);
-        
-        // HTML lang attribute'unu güncelle
-        document.documentElement.lang = lang;
-        
+
+        // Dil tercihini cookie'ye kaydet ve HTML lang attribute'unu güncelle
+        updateLanguagePreference(lang);
+
         // Meta description'ı güncelle
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
@@ -62,7 +53,6 @@ class HazerWebsite {
                 metaDesc.content = "Hazer Construction Chemicals - High-performance adhesive solutions. Floor covering, wood and industrial adhesives. Reliable, eco-friendly and quality products.";
             }
         }
-        try { localStorage.setItem('lang', lang); } catch (_) {}
     }
 
     updateLanguageButtons(lang) {

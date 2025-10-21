@@ -7,17 +7,8 @@ class AboutPage {
     }
 
     getInitialLang() {
-        try {
-            const p = new URLSearchParams(window.location.search);
-            const l = p.get('lang');
-            if (l === 'tr' || l === 'en') return l;
-            const stored = localStorage.getItem('lang');
-            if (stored === 'tr' || stored === 'en') return stored;
-            const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-            return browser.startsWith('tr') ? 'tr' : 'en';
-        } catch (_) {
-            return 'en';
-        }
+        // language-utils.js'den getLanguagePreference() kullan
+        return getLanguagePreference();
     }
 
     init() {
@@ -48,10 +39,9 @@ class AboutPage {
         this.currentLanguage = lang;
         this.updateLanguageButtons(lang);
         this.updatePageContent(lang);
-        
-        // HTML lang attribute'unu güncelle
-        document.documentElement.lang = lang;
-        try { localStorage.setItem('lang', lang); } catch (_) {}
+
+        // Dil tercihini cookie'ye kaydet ve HTML lang attribute'unu güncelle
+        updateLanguagePreference(lang);
     }
 
     updateLanguageButtons(lang) {

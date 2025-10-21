@@ -607,16 +607,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- JavaScript -->
+    <script src="./assets/js/language-utils.js"></script>
     <script src="./assets/js/layout.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/content.js"></script>
-    <script>
-        // Ensure html[lang] syncs with ?lang
-        (function syncHtmlLang() {
-            try { const p = new URLSearchParams(window.location.search); const l = p.get('lang'); if (l) { document.documentElement.lang = l; } } catch (_) { }
-        }
-        )();
-    </script>
+
 
     <script>
         // Initialize Swiper

@@ -247,17 +247,10 @@ const content = {
     }
 };
 
-// Başlangıç dili: URL (?lang=tr|en) -> tarayıcı dili -> TR
+// Başlangıç dili: Cookie -> tarayıcı dili -> EN
 function getInitialLanguage() {
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const urlLang = params.get('lang');
-        if (urlLang === 'tr' || urlLang === 'en') return urlLang;
-        const browserLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
-        return browserLang.startsWith('tr') ? 'tr' : 'en';
-    } catch (_) {
-        return 'en';
-    }
+    // language-utils.js'den getLanguagePreference() kullan
+    return getLanguagePreference();
 }
 
 const initialLanguage = getInitialLanguage();

@@ -11,25 +11,11 @@
     }
 
     function getCurrentLang() {
-        try {
-            // 1) URL param has highest priority
-            const params = new URLSearchParams(window.location.search);
-            const urlLang = params.get('lang');
-            if (urlLang === 'tr' || urlLang === 'en') return urlLang;
-
-            // 2) Persisted preference in localStorage
-            const stored = localStorage.getItem('lang');
-            if (stored === 'tr' || stored === 'en') return stored;
-
-            // 3) Fallback to browser
-            const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-            return browser.startsWith('tr') ? 'tr' : 'en';
-        } catch (_) {
-            return 'en';
-        }
+        // Cookie'den dil tercihini oku (language-utils.js'den)
+        return getLanguagePreference();
     }
 
-    function withLangParam(href, lang) {
+    function withLangParam(href) {
         try {
             // External links or hash-only links are not modified
             if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return href;
@@ -40,10 +26,9 @@
             }
             // Add base path if not already present
             normalizedHref = withBasePath(normalizedHref);
-            const url = new URL(normalizedHref, window.location.origin);
-            // Preserve existing search params e.g., ?id=...
-            url.searchParams.set('lang', lang);
-            return url.pathname.replace(/\\/g, '/') + (url.search ? url.search : '') + (url.hash || '');
+            // Dil parametresi artık URL'de değil, cookie'de tutulacak
+            // Bu fonksiyon sadece href'i normalize etmek için kullanılıyor
+            return normalizedHref;
         } catch (_) {
             return href;
         }
@@ -52,16 +37,8 @@
     function attachLanguageRouting() {
         const lang = getCurrentLang();
         try { document.documentElement.lang = lang; } catch (_) { }
-        try { localStorage.setItem('lang', lang); } catch (_) { }
-
-        // Ensure current URL carries lang param (prevents resets on navigation)
-        try {
-            const cur = new URL(window.location.href);
-            if (cur.searchParams.get('lang') !== lang) {
-                cur.searchParams.set('lang', lang);
-                history.replaceState({}, '', cur.toString());
-            }
-        } catch (_) { }
+        // Dil tercihini cookie'ye kaydet
+        try { setLanguageCookie(lang); } catch (_) { }
 
         // Helper: localize shared navbar/footer texts
         const localizeLayout = (l) => {
@@ -125,18 +102,18 @@
                 }).join('');
             }
 
-            // After rebuilding links, re-apply lang param to them
+            // After rebuilding links, normalize them
             document.querySelectorAll('a[href]').forEach(a => {
                 const href = a.getAttribute('href');
-                const updated = withLangParam(href, l);
+                const updated = withLangParam(href);
                 if (updated !== href) a.setAttribute('href', updated);
             });
         };
 
-        // Append lang to all internal nav and footer links
+        // Normalize all internal nav and footer links
         document.querySelectorAll('a[href]').forEach(a => {
             const href = a.getAttribute('href');
-            const updated = withLangParam(href, lang);
+            const updated = withLangParam(href);
             if (updated !== href) {
                 a.setAttribute('href', updated);
             }
@@ -161,18 +138,14 @@
 
         const setLang = (target) => {
             try {
-                const url = new URL(window.location.href);
-                url.searchParams.set('lang', target);
-                history.replaceState({}, '', url.toString());
-                // Also update existing links to reflect new language
+                // Dil tercihini cookie'ye kaydet
+                updateLanguagePreference(target);
+                // Normalize existing links
                 document.querySelectorAll('a[href]').forEach(a => {
                     const href = a.getAttribute('href');
-                    const updated = withLangParam(href, target);
+                    const updated = withLangParam(href);
                     if (updated !== href) a.setAttribute('href', updated);
                 });
-                // Persist and update html attribute
-                try { localStorage.setItem('lang', target); } catch (_) { }
-                try { document.documentElement.lang = target; } catch (_) { }
                 updateActive(target);
                 localizeLayout(target);
             } catch (_) { }
